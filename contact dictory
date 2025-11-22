@@ -1,0 +1,125 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "e020a1cd-4e9a-4862-a7e2-0e56da08d29b",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "Enter contact name:  subu\n",
+      "Enter phone number:  7685439867\n",
+      "Enter email address:  harijo@gmail.com\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Contact added successfully!\n",
+      "\n",
+      "\n",
+      "----- All Contacts (Sorted by Name) -----\n",
+      "Name: Arun, Phone: 9876543210, Email: arun@example.com\n",
+      "Name: Beena, Phone: 9898989898, Email: beena@example.com\n",
+      "Name: Charles, Phone: 9123456780, Email: charles@example.com\n",
+      "Name: subu, Phone: 7685439867, Email: harijo@gmail.com\n",
+      "\n",
+      "----- First 3 Contacts -----\n",
+      "Name: Arun, Phone: 9876543210, Email: arun@example.com\n",
+      "Name: Beena, Phone: 9898989898, Email: beena@example.com\n",
+      "Name: Charles, Phone: 9123456780, Email: charles@example.com\n"
+     ]
+    },
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "\n",
+      "Enter name to search:  charles\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "\n",
+      "----- Search Results -----\n",
+      "Name: Charles, Phone: 9123456780, Email: charles@example.com\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Initial 2D contact list\n",
+    "contacts = [\n",
+    "    [\"Arun\", \"9876543210\", \"arun@example.com\"],\n",
+    "    [\"Beena\", \"9898989898\", \"beena@example.com\"],\n",
+    "    [\"Charles\", \"9123456780\", \"charles@example.com\"]\n",
+    "]\n",
+    "\n",
+    "# Function to add a new contact\n",
+    "def add_contact():\n",
+    "    name = input(\"Enter contact name: \")\n",
+    "    phone = input(\"Enter phone number: \")\n",
+    "    email = input(\"Enter email address: \")\n",
+    "    contacts.append([name, phone, email])\n",
+    "    print(\"Contact added successfully!\\n\")\n",
+    "\n",
+    "# Function to display all contacts (sorted)\n",
+    "def display_contacts():\n",
+    "    print(\"\\n----- All Contacts (Sorted by Name) -----\")\n",
+    "    sorted_list = sorted(contacts, key=lambda x: x[0].lower())  # sort by name\n",
+    "    for name, phone, email in sorted_list:\n",
+    "        print(f\"Name: {name}, Phone: {phone}, Email: {email}\")\n",
+    "    return sorted_list\n",
+    "\n",
+    "# Function to search contacts (partial match)\n",
+    "def search_contact():\n",
+    "    search_key = input(\"\\nEnter name to search: \").lower()\n",
+    "    print(\"\\n----- Search Results -----\")\n",
+    "    results = [c for c in contacts if search_key in c[0].lower()]\n",
+    "    \n",
+    "    if results:\n",
+    "        for name, phone, email in results:\n",
+    "            print(f\"Name: {name}, Phone: {phone}, Email: {email}\")\n",
+    "    else:\n",
+    "        print(\"No matching contacts found.\")\n",
+    "\n",
+    "# MAIN FLOW\n",
+    "add_contact()                     # Add new contact\n",
+    "sorted_contacts = display_contacts()  # Get the sorted list\n",
+    "\n",
+    "# Display first 3 contacts after sorting\n",
+    "print(\"\\n----- First 3 Contacts -----\")\n",
+    "for c in sorted_contacts[:3]:\n",
+    "    print(f\"Name: {c[0]}, Phone: {c[1]}, Email: {c[2]}\")\n",
+    "\n",
+    "search_contact()                  # Search for a contact\n"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.13.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

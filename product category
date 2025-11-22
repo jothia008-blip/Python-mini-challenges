@@ -1,0 +1,90 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "dcd33a41-4672-4444-9326-2dd240dfb900",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "Enter a new product to add:  inventory battery\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Current products: ['Laptop', 'Pen', 'Shirt', 'inventory battery']\n"
+     ]
+    },
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "Enter the index of the product to remove:  3\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Removed: inventory battery\n",
+      "\n",
+      "Final Product List: ['Laptop', 'Pen', 'Shirt']\n",
+      "Product Categories (Tuple): ('Electronics', 'Stationery', 'Clothing')\n"
+     ]
+    }
+   ],
+   "source": [
+    "# 1. Tuple with fixed product categories (Immutable)\n",
+    "product_categories = (\"Electronics\", \"Stationery\", \"Clothing\")\n",
+    "\n",
+    "# 2. List of products (Mutable - can be updated)\n",
+    "products = [\"Laptop\", \"Pen\", \"Shirt\"]\n",
+    "\n",
+    "# 3. Ask user to enter a new product and add to list\n",
+    "new_product = input(\"Enter a new product to add: \")\n",
+    "products.append(new_product)\n",
+    "\n",
+    "# 4. Ask user for index to remove a product\n",
+    "print(\"Current products:\", products)\n",
+    "remove_index = int(input(\"Enter the index of the product to remove: \"))\n",
+    "\n",
+    "# Check if index is valid\n",
+    "if 0 <= remove_index < len(products):\n",
+    "    removed_item = products.pop(remove_index)\n",
+    "    print(f\"Removed: {removed_item}\")\n",
+    "else:\n",
+    "    print(\"Invalid index. No item removed.\")\n",
+    "\n",
+    "# 5. Display final results\n",
+    "print(\"\\nFinal Product List:\", products)\n",
+    "print(\"Product Categories (Tuple):\", product_categories)\n"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.13.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

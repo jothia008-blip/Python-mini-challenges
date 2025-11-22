@@ -1,0 +1,87 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "403e8273-a2b7-4ce0-8b68-dffcecf15c53",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "----- Student Profile -----\n",
+      "Name: Arun\n",
+      "Age: 14\n",
+      "Favourite Subjects: Maths, Science, English\n",
+      "\n",
+      "----- Updated Subjects List -----\n",
+      "1. Maths\n",
+      "2. Science\n",
+      "3. English\n",
+      "4. Computer Science\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Creating variables\n",
+    "student_name = \"Arun\"\n",
+    "student_age = 14\n",
+    "favourite_subjects = [\"Maths\", \"Science\", \"English\"]\n",
+    "\n",
+    "# Displaying student information\n",
+    "print(\"----- Student Profile -----\")\n",
+    "print(f\"Name: {student_name}\")\n",
+    "print(f\"Age: {student_age}\")\n",
+    "print(\"Favourite Subjects:\", \", \".join(favourite_subjects))\n",
+    "\n",
+    "# Updating subject list\n",
+    "# Let's say the student is adding a new subject\n",
+    "new_subject = \"Computer Science\"\n",
+    "favourite_subjects.append(new_subject)\n",
+    "\n",
+    "# Displaying updated subjects list\n",
+    "print(\"\\n----- Updated Subjects List -----\")\n",
+    "for i, subject in enumerate(favourite_subjects, start=1):\n",
+    "    print(f\"{i}. {subject}\")\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "83225bf7-ef78-4894-aab6-64714463ddac",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "54425243-bf3c-415f-a88a-dbefc3216ac6",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.13.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
